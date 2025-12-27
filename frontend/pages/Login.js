@@ -1,11 +1,14 @@
-import { api } from "../api";
+import React from "react";
 
-export default function Login() {
-  const login = async () => {
-    const res = await api.post("/auth/login");
-    localStorage.setItem("token", res.data.token);
-    alert("Login successful");
-  };
-
-  return <button onClick={login}>Login</button>;
+function Login() {
+  return (
+    <div style={{ padding: "40px" }}>
+      <h2>Login</h2>
+      <input placeholder="Email" /><br /><br />
+      <input type="password" placeholder="Password" /><br /><br />
+      <button>Login</button>
+    </div>
+  );
 }
+
+export default Login;
